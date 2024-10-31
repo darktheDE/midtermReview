@@ -1,5 +1,6 @@
 import datetime
 
+
 class DiaChi:
     def __init__(self, soNha, tenDuong, tenQuan, thanhPho):
         self._soNha = soNha
@@ -8,7 +9,16 @@ class DiaChi:
         self._thanhPho = thanhPho
 
     def InDiaChi(self):
-        print(str(self._soNha) + " " + str(self._tenDuong) + " " + str(self._tenQuan) + " " + self._thanhPho)
+        print(
+            str(self._soNha)
+            + " "
+            + str(self._tenDuong)
+            + " "
+            + str(self._tenQuan)
+            + " "
+            + self._thanhPho
+        )
+
 
 class NhanVien:
     def __init__(self, hoTen, ngaySinh, diaChi):
@@ -18,7 +28,12 @@ class NhanVien:
 
     def InThongTin(self):
         print("Họ và tên: ", self._hoTen)
-        print("Ngày sinh: " + datetime.datetime.strptime(self._ngaySinh, "%Y-%m-%d").strftime("%d-%m-%Y"))
+        print(
+            "Ngày sinh: "
+            + datetime.datetime.strptime(self._ngaySinh, "%Y-%m-%d").strftime(
+                "%d-%m-%Y"
+            )
+        )
         self._diaChi.InDiaChi()
         print("\n")
 
@@ -34,9 +49,9 @@ class NhanVienVanPhong(NhanVien):
         print("Tổng lương: ", self.TinhLuong())
         print("\n")
 
-
     def TinhLuong(self):
         return float(self._soNgayLamViec * 100000)
+
 
 class NhanVienSanXuat(NhanVien):
     def __init__(self, hoTen, ngaySinh, diaChi, luongCB, soSP):
@@ -51,9 +66,9 @@ class NhanVienSanXuat(NhanVien):
         print("Tổng lương: ", self.TinhLuong())
         print("\n")
 
-
     def TinhLuong(self):
         return float(self._luongCB + self._soSP * 5000)
+
 
 def main():
     nhanViens = []
@@ -65,5 +80,6 @@ def main():
 
     for nhanVien in nhanViens:
         nhanVien.InThongTin()
+
 
 main()
