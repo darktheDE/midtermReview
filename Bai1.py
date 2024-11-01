@@ -84,7 +84,7 @@ class Student(Person):
 class Ward:
     wardList = []
 
-    def __init__(self, name):
+    def __init__(self, name): 
         self._name = name
         self._wardList = []
 
