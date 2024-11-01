@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 class BatDongSan(ABC):
-    def __init__(self, maSo, chieuDai, chieuRong):
-        self.maSo = maSo
-        self.chieuDai = chieuDai
-        self.chieuRong = chieuRong
+    def __init__(self):
+        self.maSo = input("Nhap ma so: ")
+        self.chieuDai = input("Nhap chieu dai: ")
+        self.chieuRong = input("Nhap chieu rong: ")
 
     @property
     def maSo(self):
@@ -60,8 +60,8 @@ class TinhPhiKinhDoanh(ABC):
         pass
 
 class DatTrong(BatDongSan):
-    def __init__(self, maSo, chieuDai, chieuRong):
-        super().__init__(maSo, chieuDai, chieuRong)
+    def __init__(self):
+        super().__init__()
     
     def tinhDienTich(self):
         return super().tinhDienTich()
@@ -73,9 +73,9 @@ class DatTrong(BatDongSan):
         super().inThongTin()
     
 class NhaO(BatDongSan):
-    def __init__(self, maSo, chieuDai, chieuRong, soLau):
-        super().__init__(maSo, chieuDai, chieuRong)
-        self.soLau = soLau
+    def __init__(self):
+        super().__init__()
+        self.soLau = input("Nhap so lau: ")
         
     @property
     def soLau(self):
@@ -100,9 +100,9 @@ class NhaO(BatDongSan):
 
     
 class KhachSan(BatDongSan, TinhPhiKinhDoanh):
-    def __init__(self, maSo, chieuDai, chieuRong, soSao):
-        super().__init__(maSo, chieuDai, chieuRong)
-        self.soSao = soSao
+    def __init__(self):
+        super().__init__()
+        self.soSao = input("Nhap so sao: ")
         
     @property
     def soSao(self):
@@ -131,8 +131,8 @@ class KhachSan(BatDongSan, TinhPhiKinhDoanh):
 
     
 class BietThu(BatDongSan, TinhPhiKinhDoanh):
-    def __init__(self, maSo, chieuDai, chieuRong):
-        super().__init__(maSo, chieuDai, chieuRong)
+    def __init__(self):
+        super().__init__()
         
     
     def tinhDienTich(self):
@@ -150,10 +150,10 @@ class BietThu(BatDongSan, TinhPhiKinhDoanh):
     
 def main():
     listBDS = []
-    kSan01 = KhachSan("232","3213","32","2")
-    bThu01 = BietThu("231","1214","32")
-    nhaO1 = NhaO("3213","321","32","2")
-    dTrong01 = DatTrong("3243","42","23")
+    kSan01 = KhachSan()
+    bThu01 = BietThu()
+    nhaO1 = NhaO()
+    dTrong01 = DatTrong()
     listBDS.append(kSan01)
     listBDS.append(bThu01)
     listBDS.append(nhaO1)
