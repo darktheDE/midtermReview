@@ -1,6 +1,7 @@
 # --- Hướng dẫn cơ bản về NumPy trong Python ---
 
-# NumPy là một thư viện mạnh mẽ cho tính toán khoa học trong Python, đặc biệt hữu ích khi làm việc với mảng và ma trận.
+# NumPy là một thư viện mạnh mẽ cho tính toán khoa học trong Python, 
+# đặc biệt hữu ích khi làm việc với mảng và ma trận.
 # Để sử dụng NumPy, bạn cần import thư viện:
 import numpy as np
 
